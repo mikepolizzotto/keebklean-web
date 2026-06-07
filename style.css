@@ -58,6 +58,19 @@ h1 { font-size: 2.9rem; letter-spacing: -.02em; font-weight: 800; }
 }
 .btn small { display: block; font-weight: 400; font-size: .78rem; opacity: .8; }
 
+/* Highlight callout band */
+.highlight {
+  display: flex; gap: 22px; align-items: center;
+  background: linear-gradient(180deg, rgba(79,140,255,.12), rgba(79,140,255,.04));
+  border: 1px solid rgba(79,140,255,.35);
+  border-radius: var(--radius); padding: 28px 32px;
+  margin-top: 8px;
+}
+.highlight .emoji { font-size: 2.4rem; line-height: 1; }
+.highlight h3 { font-size: 1.3rem; margin-bottom: 4px; }
+.highlight p { color: var(--muted); }
+@media (max-width: 640px) { .highlight { flex-direction: column; text-align: center; } }
+
 /* Sections */
 section { padding: 44px 0; }
 h2 { font-size: 1.7rem; letter-spacing: -.01em; margin-bottom: 8px; text-align: center; }
