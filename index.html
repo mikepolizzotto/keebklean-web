@@ -23,7 +23,8 @@
           Download on the Mac App Store
           <small>$2.99 · macOS 14+</small>
         </a>
-        <a class="btn btn-secondary gumroad-button" href="https://mikepolo1.gumroad.com/l/keebklean" data-gumroad-overlay-checkout="true">
+        <a class="btn btn-secondary" href="https://mikepolo1.gumroad.com/l/keebklean"
+           onclick="var b=document.getElementById('gr-buy'); if(b){b.click(); return false;}">
           Buy the Direct version
           <small>$2.99 · full key-locking</small>
         </a>
@@ -113,7 +114,10 @@
     </div>
   </footer>
 
-  <!-- Gumroad overlay: opens the secure checkout in a modal on this site -->
+  <!-- Hidden Gumroad-attached trigger. Our own button (above) clicks this to open the
+       on-site checkout overlay, so the visible button keeps our design with no Gumroad logo. -->
+  <a class="gumroad-button" id="gr-buy" href="https://mikepolo1.gumroad.com/l/keebklean"
+     style="display:none" aria-hidden="true" tabindex="-1"></a>
   <script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
