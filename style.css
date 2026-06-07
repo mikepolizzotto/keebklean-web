@@ -21,6 +21,22 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  animation: fadeIn .6s ease both;
+}
+
+/* Gentle entrance: whole page fades in, hero elements rise in with a soft stagger. */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+header .appicon { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) both .05s; }
+header h1       { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) both .15s; }
+header .tagline { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) both .25s; }
+header .cta     { animation: riseIn .7s cubic-bezier(.2,.7,.2,1) both .35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  body, header .appicon, header h1, header .tagline, header .cta { animation: none; }
 }
 
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
@@ -39,7 +55,8 @@ h1 { font-size: 2.9rem; letter-spacing: -.02em; font-weight: 800; }
 .tagline { font-size: 1.25rem; color: var(--muted); margin-top: 12px; }
 
 /* Buttons */
-.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 36px auto 0; max-width: 640px; }
+.cta .btn { flex: 1 1 240px; }   /* equal-width pair; each goes full-width when wrapped */
 
 .btn {
   display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
